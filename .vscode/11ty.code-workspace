@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"emmet.includeLanguages": {
+			"md": "html",
+			"nunjucks": "html"
+		},
+		"emmet.syntaxProfiles": {
+			"md": "html",
+			"nunjucks": "html"
+		}
+	}
+}

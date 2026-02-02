@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "name": "work",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "istart": "eleventy --serve --incremental",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-plugin-vite": "^7.0.0",
+    "swiper": "^12.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "prettier": "^3.8.1",
+    "prettier-eslint": "^1.0.1"
+  }
+}
