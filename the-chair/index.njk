@@ -9,22 +9,20 @@
 	<body>
 		<div class="swiper swiper-container-v swiper-v">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide">Horizontal Slide 1</div>
+				{% for week in weekFiles %}
 				<div class="swiper-slide">
 					<div class="swiper swiper-container-h swiper-h">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide">Vertical Slide 1</div>
-							<div class="swiper-slide">Vertical Slide 2</div>
-							<div class="swiper-slide">Vertical Slide 3</div>
-							<div class="swiper-slide">Vertical Slide 4</div>
-							<div class="swiper-slide">Vertical Slide 5</div>
+							{% for file in week %}
+							<div class="swiper-slide">
+								<img src="{{file}}" alt="">
+							</div>
+							{% endfor %}
 						</div>
-						<div class="swiper-pagination-h"></div>
 					</div>
 				</div>
-				<div class="swiper-slide">Horizontal Slide 4</div>
+				{% endfor %}
 			</div>
-			<div class="swiper-pagination"></div>
 		</div>
 		<script type="module" src="carousel.js"></script>
 	</body>

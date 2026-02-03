@@ -36,5 +36,7 @@ for (const directory of directories) {
 }
 
 export default function () {
-  return filePaths;
+  return {
+    weekFiles: filePaths,
+  };
 }
