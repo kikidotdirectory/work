@@ -13,6 +13,10 @@ const swiperV = new Swiper(".swiper-container-v", {
     enabled: true,
     forceToAxis: true,
   },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });
 
 const swiperH = new Swiper(".swiper-container-h", {
@@ -25,5 +29,9 @@ const swiperH = new Swiper(".swiper-container-h", {
   mousewheel: {
     enabled: true,
     forceToAxis: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 });
