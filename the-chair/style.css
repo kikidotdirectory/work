@@ -43,18 +43,14 @@ body {
   width: 1rem;
 }
 
-.swiper-button-up-container {
+.swiper-button-up-container,
+.swiper-button-down-container {
   display: flex;
   justify-content: center;
 }
 
 .swiper-button-up {
   background-image: url('./carousel-assets/arrow_up.svg');
-}
-
-.swiper-button-up.swiper-button-disabled {
-  opacity: 0;
-  transition: opacity 0.5s;
 }
 
 .swiper-button-next {
@@ -65,16 +61,12 @@ body {
   background-image: url('./carousel-assets/arrow_left.svg');
 }
 
-.swiper-button-down-container {
-  display: flex;
-  justify-content: center;
-}
-
 .swiper-button-down {
   z-index: 10;
   background-image: url('./carousel-assets/arrow_down.svg');
 }
 
+.swiper-button-up.swiper-button-disabled,
 .swiper-button-down.swiper-button-disabled {
   opacity: 0;
   transition: opacity 0.5s;
