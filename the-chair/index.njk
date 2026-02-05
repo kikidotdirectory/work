@@ -7,11 +7,10 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-
+		<div class="swiper-button-up-container">
+			<div class="swiper-button-up"></div>
+		</div>
 		<div class="swiper swiper-container-v swiper-v">
-			<div class="swiper-button-up-container">
-				<div class="swiper-button-up"></div>
-			</div>
 			<div class="swiper-wrapper">
 				{% for week in weekFiles %}
 				<div class="swiper-slide">
@@ -29,9 +28,9 @@
 				</div>
 				{% endfor %}
 			</div>
-			<div class="swiper-button-down-container">
-				<div class="swiper-button-down"></div>
-			</div>
+		</div>
+		<div class="swiper-button-down-container">
+			<div class="swiper-button-down"></div>
 		</div>
 		<script type="module" src="carousel.js"></script>
 	</body>
