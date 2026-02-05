@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>‘The Chair’</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
@@ -15,6 +16,9 @@
 				{% for week in weekFiles %}
 				<div class="swiper-slide">
 					<div class="swiper swiper-container-h swiper-h">
+						<div class="swiper-button-prev-container">
+							<div class="swiper-button-prev"></div>
+						</div>
 						<div class="swiper-wrapper">
 							{% for file in week %}
 							<div class="swiper-slide">
@@ -22,8 +26,9 @@
 							</div>
 							{% endfor %}
 						</div>
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
+						<div class="swiper-button-next-container">
+							<div class="swiper-button-next"></div>
+						</div>
 					</div>
 				</div>
 				{% endfor %}
