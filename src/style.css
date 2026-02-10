@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+main>* {
+  padding: 0.25rem 0.5rem;
+  outline: 1px solid rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+a {
+  color: rgb(84, 136, 226);
+}
+
+#kiki-chang {
+  width: 100px;
+  height: 100px;
+}
