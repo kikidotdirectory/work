@@ -42,6 +42,10 @@ article {
   }
 }
 
+article#panel-chair {
+  width: min-content;
+}
+
 hr {
   border: none;
   border-bottom: 1px solid #dadada;
