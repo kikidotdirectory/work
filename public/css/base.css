@@ -31,10 +31,14 @@ h1 {
 
 h2 {
   font-size: inherit;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 h2:after {
-  content: " =========================";
+  content: " ============================";
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 section {
