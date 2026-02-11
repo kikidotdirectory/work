@@ -30,11 +30,11 @@ for (const directory of directories) {
     .map((entry) => entry.name)
     .filter((name) => imageExts.has(path.extname(name).toLowerCase()));
   const imagePaths = images.map((name) =>
-    path.join("assets", directory.name, name),
+    path.join("assets","the-chair", directory.name, name),
   );
   filePaths.push(imagePaths);
 }
 
-export default function () {
+export default async function () {
   return filePaths;
 }
