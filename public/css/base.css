@@ -32,9 +32,13 @@ h1 {
 h2 {
   font-size: inherit;
 }
+
 h2:after {
   content: " =========================";
-  overflow: hidden;
+}
+
+section {
+  margin-top: 1rem;
 }
 
 img {
@@ -42,4 +46,8 @@ img {
   height: auto;
 }
 
-#kiki-chang {}
+.desc {
+  text-decoration: none;
+  color: black;
+  opacity: .6;
+}
