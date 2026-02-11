@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.join(__dirname, "..");
-const ASSETS_DIR = path.join(PROJECT_ROOT, "the-chair", "assets");
+const ASSETS_DIR = path.join(PROJECT_ROOT, "public","assets", "the-chair");
 const assetsContents = await fs.readdir(ASSETS_DIR, { withFileTypes: true });
 const directories = assetsContents.filter((fileEntry) =>
   fileEntry.isDirectory(),
@@ -36,7 +36,5 @@ for (const directory of directories) {
 }
 
 export default function () {
-  return {
-    weekFiles: filePaths,
-  };
+  return filePaths;
 }

@@ -1,0 +1,30 @@
+<div class="swiper-button-up-container">
+	<div class="swiper-button-up"></div>
+</div>
+
+<div class="swiper swiper-container-v swiper-v">
+	<div class="swiper-wrapper">
+		{% for week in the-chair %}
+		<div class="swiper-slide">
+			<div class="swiper swiper-container-h swiper-h">
+				<div class="swiper-button-prev-container">
+					<div class="swiper-button-prev"></div>
+				</div>
+				<div class="swiper-wrapper">
+					{% for file in week %}
+					<div class="swiper-slide">
+						<img src="{{file}}" alt="">
+					</div>
+					{% endfor %}
+				</div>
+				<div class="swiper-button-next-container">
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+<div class="swiper-button-down-container">
+	<div class="swiper-button-down"></div>
+</div>

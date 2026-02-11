@@ -1,5 +1,3 @@
-import Swiper from "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs";
-
 const swiperV = new Swiper(".swiper-container-v", {
   speed: 900,
   direction: "vertical",
