@@ -7,6 +7,10 @@
     "TRIP" 0.80;
 }
 
+:root {
+  --chair-carousel-size: 30rem;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -93,6 +97,7 @@ a:hover {
   background: white;
   outline: 1px solid #dadada;
   padding: 0.25rem;
+  z-index: 99;
 }
 
 .link {
@@ -112,8 +117,8 @@ a:hover {
 }
 
 .swiper {
-  width: 648px;
-  height: 600px;
+  width: calc(1.08*var(--chair-carousel-size));
+  height: var(--chair-carousel-size);
 }
 
 .swiper-slide {
@@ -125,7 +130,6 @@ a:hover {
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
@@ -133,8 +137,8 @@ a:hover {
 .swiper-button-down,
 .swiper-button-next,
 .swiper-button-prev {
-  height: 1rem;
-  width: 1rem;
+  height: .75rem;
+  aspect-ratio: 1;
 }
 
 .swiper-button-up-container,
@@ -148,7 +152,7 @@ a:hover {
   display: flex;
   align-items: center;
   position: absolute;
-  width: 1.5rem;
+  width: calc(0.04 * var(--chair-carousel-size));
   height: 100%;
   background-color: white;
   z-index: 10;
