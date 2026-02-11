@@ -179,11 +179,11 @@ a:hover {
 }
 
 .swiper-button-up {
-  background-image: url('assets/carousel-assets/arrow_up.svg');
+  background-image: url('/assets/carousel-assets/arrow_up.svg');
 }
 
 .swiper-button-next {
-  background-image: url('assets/carousel-assets/arrow_right.svg');
+  background-image: url('/assets/carousel-assets/arrow_right.svg');
   right: 0;
   top: 50%;
   position: absolute;
@@ -191,12 +191,12 @@ a:hover {
 }
 
 .swiper-button-prev {
-  background-image: url('assets/carousel-assets/arrow_left.svg');
+  background-image: url('/assets/carousel-assets/arrow_left.svg');
 }
 
 .swiper-button-down {
   z-index: 10;
-  background-image: url('assets/carousel-assets/arrow_down.svg');
+  background-image: url('/assets/carousel-assets/arrow_down.svg');
 }
 
 .swiper-button-up.swiper-button-disabled,
