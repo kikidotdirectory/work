@@ -11,4 +11,4 @@ setInterval(() => {
   current = (current + 1) % thumbnails.length;
   document.getElementById('chair-thumbnail').src = 'assets/thumbnails/the-chair/'+thumbnails[current];
   preloadNext();
-}, 3000);
+}, 1500);
