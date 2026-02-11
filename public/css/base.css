@@ -1,37 +1,45 @@
 @import "reset.css";
 
+@font-face {
+  font-family: "ABC Oracle Variable";
+  src: url("/fonts/ABCOraclePlusVariableEdu-Regular.woff2") format("woff2");
+  font-variation-settings:
+    "TRIP" 0.80;
+}
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  font-family: "ABC Oracle Variable", Arial, Helvetica, sans-serif;
   font-size: .9rem;
+  background-color: #dfdfdf;
 }
 
 main {
-  display: grid;
-  grid-template-columns: 4rem 4rem 3rem 5rem;
-  grid-template-rows: 5rem;
-  gap: var(--stroke-width)
-}
-
-main>* {
+  max-width: 30ch;
+  background-color: white;
   padding: 0.25rem 0.5rem;
-  outline: 1px solid rgba(0, 0, 0, 0.5);
-
-  &:hover {
-    background-color: #000;
-    color: #fff;
-  }
 }
 
-a {
-  color: rgb(84, 136, 226);
+h1 {
+  font-size: inherit;
+  font-weight: normal;
+  font-style: italic;
 }
 
-#kiki-chang {
-  grid-column: 2/5;
-  border-top-right-radius: 24px;
-  corner-shape: bevel;
+h2 {
+  font-size: inherit;
 }
+h2:after {
+  content: " =========================";
+  overflow: hidden;
+}
+
+img {
+  width: 100px;
+  height: auto;
+}
+
+#kiki-chang {}
