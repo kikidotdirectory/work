@@ -121,7 +121,7 @@ a:hover {
 }
 
 .swiper {
-  width: calc(1.08*var(--chair-carousel-size));
+  width: calc(1.1*var(--chair-carousel-size));
   height: var(--chair-carousel-size);
 }
 
@@ -129,6 +129,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  aspect-ratio: 1;
 }
 
 .swiper-slide img {
@@ -137,26 +138,33 @@ a:hover {
   object-fit: cover;
 }
 
+
 .swiper-button-up,
 .swiper-button-down,
 .swiper-button-next,
 .swiper-button-prev {
-  height: .75rem;
+  height: max(calc(0.025 * var(--chair-carousel-size)), .5rem);
   aspect-ratio: 1;
+  position: static !important;
+  margin: 0 !important;
+  flex: 0 !important;
 }
 
 .swiper-button-up-container,
 .swiper-button-down-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: calc(0.05 * var(--chair-carousel-size));
 }
 
 .swiper-button-next-container,
 .swiper-button-prev-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: absolute;
-  width: calc(0.04 * var(--chair-carousel-size));
+  width: calc(0.05 * var(--chair-carousel-size));
   height: 100%;
   background-color: white;
   z-index: 10;
@@ -165,25 +173,10 @@ a:hover {
 
 .swiper-button-next-container {
   right: 0;
-
-  & .swiper-button-next {
-    right: 0;
-    top: 50%;
-    position: absolute;
-    margin: 0;
-    left: auto;
-  }
 }
 
 .swiper-button-prev-container {
   left: 0;
-
-  & .swiper-button-prev {
-    left: 0;
-    top: 50%;
-    position: absolute;
-    margin: 0;
-  }
 }
 
 .swiper-button-up {

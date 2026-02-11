@@ -32,6 +32,6 @@ const swiperH = new Swiper(".swiper-container-h", {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  slidesPerView: 1.08,
+  slidesPerView: 1.1,
   centeredSlides: true,
 });
