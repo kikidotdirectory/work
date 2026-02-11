@@ -14,15 +14,36 @@ body {
   min-height: 100vh;
   font-family: "ABC Oracle Variable", Arial, Helvetica, sans-serif;
   font-size: .9rem;
-  background-color: #dfdfdf;
+
   /* filter: url("../assets/distort.svg#distort"); */
 }
 
-main {
-  max-width: 30ch;
-  background-color: white;
-  padding: 1rem 0.5rem;
+.printer {
+  display: flex;
+  gap: 1rem;
 }
+
+article {
+  width: 30ch;
+  padding: 1rem 0;
+  border: 1px solid #dadada;
+  height: min-content;
+
+  & h1,
+  h2,
+  h3,
+  p,
+  >a {
+    margin: 0 0.5rem;
+  }
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #dadada;
+  margin: 1rem 0;
+}
+
 
 h1 {
   font-size: inherit;
@@ -34,6 +55,7 @@ h2 {
   font-size: inherit;
   white-space: nowrap;
   overflow: hidden;
+  margin-top: 1rem;
 }
 
 h2:after {
@@ -42,9 +64,6 @@ h2:after {
   overflow: hidden;
 }
 
-section {
-  margin-top: 1rem;
-}
 
 img {
   width: 100px;
@@ -63,6 +82,7 @@ a:hover {
   &::before {
     content: '['
   }
+
   &::after {
     content: ']'
   }
@@ -71,7 +91,7 @@ a:hover {
 .preview {
   display: none;
   background: white;
-  outline: 1px solid black;
+  outline: 1px solid #dadada;
   padding: 0.25rem;
 }
 
@@ -90,4 +110,3 @@ a:hover {
   height: auto;
   overflow: hidden;
 }
-
