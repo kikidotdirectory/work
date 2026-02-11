@@ -58,6 +58,15 @@ a {
   height: min-content;
 }
 
+a:hover {
+  &::before {
+    content: '['
+  }
+  &::after {
+    content: ']'
+  }
+}
+
 .preview {
   display: none;
   background: white;
