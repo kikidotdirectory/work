@@ -50,6 +50,22 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  width: 100%;
+  height: min-content;
+}
+
+a:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+  transition: 0.1s;
+}
+
+.link {
+  text-decoration: underline;
+}
 .desc {
   text-decoration: none;
   color: black;
