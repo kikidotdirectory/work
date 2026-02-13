@@ -22,7 +22,7 @@ body {
 	/* filter: url("../assets/distort.svg#distort"); */
 }
 
-.printer {
+#printer {
 	display: flex;
 	gap: 1rem;
 }
@@ -43,7 +43,7 @@ article {
 	}
 }
 
-article#panel-chair {
+article#the-chair {
 	max-width: min-content;
 }
 
