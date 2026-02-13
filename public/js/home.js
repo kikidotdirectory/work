@@ -1,11 +1,13 @@
-const thumbnails = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
+const thumbnails = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"];
 let current = 0;
 let slideshowInterval = null;
 
 // Preload next image
 function preloadNext() {
   const next = new Image();
-  next.src = 'assets/thumbnails/the-chair/' + thumbnails[(current + 1) % thumbnails.length];
+  next.src =
+    "assets/thumbnails/the-chair/" +
+    thumbnails[(current + 1) % thumbnails.length];
 }
 
 function startSlideshow() {
@@ -13,7 +15,8 @@ function startSlideshow() {
 
   slideshowInterval = setInterval(() => {
     current = (current + 1) % thumbnails.length;
-    document.getElementById('chair-thumbnail').src = 'assets/thumbnails/the-chair/' + thumbnails[current];
+    document.getElementById("chair-thumbnail").src =
+      "assets/thumbnails/the-chair/" + thumbnails[current];
     preloadNext();
   }, 1500);
 }
@@ -23,7 +26,8 @@ function stopSlideshow() {
     clearInterval(slideshowInterval);
     slideshowInterval = null;
     current = 0; // Reset to first image
-    document.getElementById('chair-thumbnail').src = 'assets/thumbnails/the-chair/' + thumbnails[0];
+    document.getElementById("chair-thumbnail").src =
+      "assets/thumbnails/the-chair/" + thumbnails[0];
   }
 }
 
@@ -66,3 +70,19 @@ projectLinks.forEach((link) => {
   }
 });
 
+// open new receipt on link click
+async function printSheet(sheetName) {
+  try {
+    const response = await fetch(`sheets/${sheetName}/index.html`);
+    const sheetContent = await response.text();
+
+    const printer = document.getElementById("printer");
+    const sheet = document.createElement("article");
+    sheet.innerHTML = sheetContent;
+    sheet.id = sheetName;
+
+    printer.append(sheet);
+  } catch (error) {
+    console.error(`Error printing ${sheetName}:`, error);
+  }
+}
