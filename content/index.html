@@ -11,10 +11,7 @@
 	</head>
 	<body>
 		<div id="printer">
-			<article>
-				<a href="">●</a>
-				<br>
-				<br>
+			<article id="home" class="printed">
 				<p style="line-height: 1;"><a href="/kiki-chang">/kiki-chang/</a><br>ui/ux + graphic designer</p>
 
 				<hr>
@@ -30,6 +27,7 @@
 				<hr>
 
 				<h2>projects</h2>
+				<button onclick="printSheet('the-chair')">the-chair</button>
 				<a href="/the-chair">
 					<span class="link">/the-chair/</span>
 					<span class="desc tags">
@@ -40,8 +38,11 @@
 					<img id="chair-thumbnail" src="assets/thumbnails/the-chair/1.png" alt="">
 				</div>
 			</article>
-			<script src="js/home.js"></script>
-			<script type="module" src="js/the-chair/carousel.js"></script>
+			<article id="the-chair">
+				{% include "sheets/the-chair.njk" %}
+			</article>
 		</div>
+		<script src="js/home.js"></script>
+		<script src="js/the-chair/carousel.js"></script>
 	</body>
 </html>
