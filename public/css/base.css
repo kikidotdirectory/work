@@ -170,6 +170,10 @@ a:hover {
 	background-color: white;
 	z-index: 10;
 	top: 0;
+
+	/* i don't know why but this line is needed for the containers
+	 * to appear when using the nested swipers in safari */
+	-webkit-transform: translateZ(0);
 }
 
 .swiper-button-next-container {
