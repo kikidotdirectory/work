@@ -17,7 +17,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addBundle("html");
 
   // plugins
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+  // eleventyConfig.addPlugin(eleventyImageTransformPlugin);
 }
 
 export const config = {
