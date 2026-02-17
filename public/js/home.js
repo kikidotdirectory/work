@@ -16,7 +16,7 @@ function startSlideshow() {
   slideshowInterval = setInterval(() => {
     current = (current + 1) % thumbnails.length;
     document.getElementById("chair-thumbnail").src =
-      "assets/thumbnails/the-chair/" + thumbnails[current];
+      "/assets/thumbnails/the-chair/" + thumbnails[current];
     preloadNext();
   }, 1500);
 }
@@ -27,7 +27,7 @@ function stopSlideshow() {
     slideshowInterval = null;
     current = 0; // Reset to first image
     document.getElementById("chair-thumbnail").src =
-      "assets/thumbnails/the-chair/" + thumbnails[0];
+      "/assets/thumbnails/the-chair/" + thumbnails[0];
   }
 }
 
