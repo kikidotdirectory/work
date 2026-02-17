@@ -1,0 +1,89 @@
+.swiper {
+	width: 100%;
+	aspect-ratio: 1.1;
+}
+
+.swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	object-fit: contain;
+}
+
+
+.swiper-button-up,
+.swiper-button-down,
+.swiper-button-next,
+.swiper-button-prev {
+	margin: 0;
+	width: 100% !important;
+	aspect-ratio: 1;
+	position: static !important;
+	margin: 0 !important;
+	flex: 0 !important;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60%;
+}
+
+.swiper-button-up-container,
+.swiper-button-down-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.swiper-button-next-container,
+.swiper-button-prev-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	width: 4.5%;
+	height: 100%;
+	background-color: white;
+	z-index: 10;
+	top: 0;
+
+	/* i don't know why but this line is needed for the containers
+	 * to appear when using the nested swipers in safari */
+	-webkit-transform: translateZ(0);
+}
+
+.swiper-button-next-container {
+	right: 0;
+}
+
+.swiper-button-prev-container {
+	left: 0;
+}
+
+.swiper-button-up {
+	background-image: url('/assets/carousel-assets/arrow_up.svg');
+}
+
+.swiper-button-next {
+	background-image: url('/assets/carousel-assets/arrow_right.svg');
+}
+
+.swiper-button-prev {
+	background-image: url('/assets/carousel-assets/arrow_left.svg');
+}
+
+.swiper-button-down {
+	z-index: 10;
+	background-image: url('/assets/carousel-assets/arrow_down.svg');
+}
+
+.swiper-button-up.swiper-button-disabled,
+.swiper-button-down.swiper-button-disabled {
+	opacity: 0;
+	transition: opacity 0.5s;
+}
