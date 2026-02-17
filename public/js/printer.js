@@ -1,18 +1,16 @@
-let printedSheets = ["home"]
+let printedSheets = ["home"];
 
 // open new receipt on link click
-async function printSheet(sheetName) {
-  try {
-    const response = await fetch(`sheets/${sheetName}/index.html`);
-    const sheetContent = await response.text();
-
-    const printer = document.getElementById("printer");
-    const sheet = document.createElement("article");
-    sheet.innerHTML = sheetContent;
-    sheet.id = sheetName;
-
-    printer.append(sheet);
-  } catch (error) {
-    console.error(`Error printing ${sheetName}:`, error);
+function printSheet(sheetName) {
+  const sheet = document.getElementById(sheetName);
+  if (sheet.matches(`#${sheetName}.printed`)) {
+    return;
+  } else {
+    const lastPrintedSheet = document.getElementById(
+      printedSheets[printedSheets.length - 1],
+    );
+    lastPrintedSheet.after(sheet);
+    sheet.className = "printed";
+    console.log("printed");
   }
 }

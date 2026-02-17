@@ -33,6 +33,10 @@ article {
 	padding: 1rem 0;
 	border: 1px solid #dadada;
 	height: min-content;
+	display: none;
+	&.printed {
+		display: block;
+	}
 
 	& h1,
 	h2,
