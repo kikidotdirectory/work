@@ -11,6 +11,10 @@
 	</head>
 	<body>
 		<div id="printer">
+			<article id="the-chair" class="">
+				{% include "sheets/the-chair.njk" %}
+			</article>
+
 			<article id="home" class="printed">
 				<p style="line-height: 1;"><a href="/kiki-chang">/kiki-chang/</a><br>ui/ux + graphic designer</p>
 
@@ -38,11 +42,9 @@
 					<img id="chair-thumbnail" src="assets/thumbnails/the-chair/1.png" alt="">
 				</div>
 			</article>
-			<article id="the-chair">
-				{% include "sheets/the-chair.njk" %}
-			</article>
 		</div>
 		<script src="js/home.js"></script>
+		<script src="js/printer.js"></script>
 		<script src="js/the-chair/carousel.js"></script>
 	</body>
 </html>
