@@ -1,20 +1,23 @@
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default async function (eleventyConfig) {
-  eleventyConfig
-    .addPassthroughCopy({
-      "./public/": "/"
-    })
+  eleventyConfig.addPassthroughCopy({
+    "./public/": "/",
+  });
 
   // enable smart quotes
   eleventyConfig.amendLibrary("md", function (md) {
     md.set({
       typographer: true,
     });
-
-    // plugins
-    eleventyConfig.addPlugin(eleventyImageTransformPlugin);
   });
+
+  // configure eleventy bundles
+  eleventyConfig.addBundle("css");
+  eleventyConfig.addBundle("html");
+
+  // plugins
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
 }
 
 export const config = {
@@ -25,7 +28,6 @@ export const config = {
     includes: "../_includes",
     layouts: "../_includes/layouts",
     data: "../_data",
-    output: "_site"
-  }
-}
-
+    output: "_site",
+  },
+};
