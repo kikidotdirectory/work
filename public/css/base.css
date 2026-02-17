@@ -112,9 +112,10 @@ a:hover {
 	overflow: hidden;
 }
 
+
 .swiper {
-	width: calc(1.1*var(--chair-carousel-size));
-	height: var(--chair-carousel-size);
+	width: 100%;
+	aspect-ratio: 1.1;
 }
 
 .swiper-slide {
@@ -144,7 +145,7 @@ a:hover {
 
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 60%;
+	background-size: 80%;
 }
 
 .swiper-button-up-container,
@@ -160,7 +161,7 @@ a:hover {
 	align-items: center;
 	justify-content: center;
 	position: absolute;
-	width: calc(0.05 * var(--chair-carousel-size));
+	width: 5%;
 	height: 100%;
 	background-color: white;
 	z-index: 10;
