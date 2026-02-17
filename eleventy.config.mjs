@@ -1,4 +1,3 @@
-import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default async function (eleventyConfig) {
@@ -6,10 +5,6 @@ export default async function (eleventyConfig) {
     .addPassthroughCopy({
       "./public/": "/"
     })
-    .addPassthroughCopy("**/*.png")
-  eleventyConfig.addPassthroughCopy("**/*.css");
-  eleventyConfig.addPassthroughCopy("**/*.js");
-  eleventyConfig.addPassthroughCopy("**/*.svg");
 
   // enable smart quotes
   eleventyConfig.amendLibrary("md", function (md) {
@@ -18,7 +13,6 @@ export default async function (eleventyConfig) {
     });
 
     // plugins
-    eleventyConfig.addPlugin(EleventyVitePlugin);
     eleventyConfig.addPlugin(eleventyImageTransformPlugin);
   });
 }

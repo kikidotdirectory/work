@@ -1,37 +1,216 @@
 @import "reset.css";
 
+@font-face {
+	font-family: "ABC Oracle Variable";
+	src: url("/fonts/ABCOraclePlusVariableEdu-Regular.woff2") format("woff2");
+}
+
+:root {
+	--chair-carousel-size: 30rem;
+}
+
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: .9rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	font-family: "ABC Oracle Variable", Arial, Helvetica, sans-serif;
+	font-size: .9rem;
+	font-variation-settings:
+		"TRIP" 0.80;
+
+	/* filter: url("../assets/distort.svg#distort"); */
 }
 
-main {
-  display: grid;
-  grid-template-columns: 4rem 4rem 3rem 5rem;
-  grid-template-rows: 5rem;
-  gap: var(--stroke-width)
+#printer {
+	display: flex;
+	gap: 1rem;
 }
 
-main>* {
-  padding: 0.25rem 0.5rem;
-  outline: 1px solid rgba(0, 0, 0, 0.5);
+article {
+	position: relative;
+	max-width: 30ch;
+	padding: 1rem 0;
+	border: 1px solid #dadada;
+	height: min-content;
+	display: none;
+	&.printed {
+		display: block;
+	}
 
-  &:hover {
-    background-color: #000;
-    color: #fff;
-  }
+	& h1,
+	h2,
+	h3,
+	p,
+	>a {
+		margin: 0 0.5rem;
+	}
+}
+
+article#the-chair {
+	max-width: min-content;
+}
+
+hr {
+	border: none;
+	border-bottom: 1px solid #dadada;
+	margin: 1rem 0;
+}
+
+
+h1 {
+	font-size: inherit;
+	font-weight: normal;
+	font-style: italic;
+}
+
+h2 {
+	font-size: inherit;
+	white-space: nowrap;
+	overflow: hidden;
+	margin-top: 1rem;
+}
+
+h2:after {
+	content: " ============================";
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+img {
+	width: 100px;
+	height: auto;
 }
 
 a {
-  color: rgb(84, 136, 226);
+	text-decoration: none;
+	display: inline-block;
+	line-height: 1;
+	width: 100%;
+	height: min-content;
 }
 
-#kiki-chang {
-  grid-column: 2/5;
-  border-top-right-radius: 24px;
-  corner-shape: bevel;
+a:hover {
+	&::before {
+		content: '['
+	}
+
+	&::after {
+		content: ']'
+	}
+}
+
+.preview {
+	display: none;
+	background: white;
+	outline: 1px solid #dadada;
+	padding: 0.25rem;
+	z-index: 99;
+}
+
+.link {
+	text-decoration: underline;
+}
+
+.desc {
+	text-decoration: none;
+	color: black;
+	opacity: .6;
+}
+
+#chair-thumbnail {
+	width: 20rem;
+	height: auto;
+	overflow: hidden;
+}
+
+.swiper {
+	width: calc(1.1*var(--chair-carousel-size));
+	height: var(--chair-carousel-size);
+}
+
+.swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	object-fit: cover;
+}
+
+
+.swiper-button-up,
+.swiper-button-down,
+.swiper-button-next,
+.swiper-button-prev {
+	height: max(calc(0.025 * var(--chair-carousel-size)), .5rem);
+	aspect-ratio: 1;
+	position: static !important;
+	margin: 0 !important;
+	flex: 0 !important;
+}
+
+.swiper-button-up-container,
+.swiper-button-down-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(0.05 * var(--chair-carousel-size));
+}
+
+.swiper-button-next-container,
+.swiper-button-prev-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	width: calc(0.05 * var(--chair-carousel-size));
+	height: 100%;
+	background-color: white;
+	z-index: 10;
+	top: 0;
+
+	/* i don't know why but this line is needed for the containers
+	 * to appear when using the nested swipers in safari */
+	-webkit-transform: translateZ(0);
+}
+
+.swiper-button-next-container {
+	right: 0;
+}
+
+.swiper-button-prev-container {
+	left: 0;
+}
+
+.swiper-button-up {
+	background-image: url('/assets/carousel-assets/arrow_up.svg');
+}
+
+.swiper-button-next {
+	background-image: url('/assets/carousel-assets/arrow_right.svg');
+	right: 0;
+	top: 50%;
+	position: absolute;
+	margin: 0;
+}
+
+.swiper-button-prev {
+	background-image: url('/assets/carousel-assets/arrow_left.svg');
+}
+
+.swiper-button-down {
+	z-index: 10;
+	background-image: url('/assets/carousel-assets/arrow_down.svg');
+}
+
+.swiper-button-up.swiper-button-disabled,
+.swiper-button-down.swiper-button-disabled {
+	opacity: 0;
+	transition: opacity 0.5s;
 }

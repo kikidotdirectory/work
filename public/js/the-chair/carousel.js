@@ -1,5 +1,3 @@
-import Swiper from "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs";
-
 const swiperV = new Swiper(".swiper-container-v", {
   speed: 900,
   direction: "vertical",
@@ -13,8 +11,8 @@ const swiperV = new Swiper(".swiper-container-v", {
   },
   navigation: {
     addIcons: false,
-    nextEl: '.swiper-button-down',
-    prevEl: '.swiper-button-up',
+    nextEl: ".swiper-button-down",
+    prevEl: ".swiper-button-up",
   },
 });
 
@@ -31,9 +29,9 @@ const swiperH = new Swiper(".swiper-container-h", {
   },
   navigation: {
     addIcons: false,
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
-  slidesPerView: 1.08,
+  slidesPerView: 1.1,
   centeredSlides: true,
 });
