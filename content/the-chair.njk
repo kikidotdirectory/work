@@ -7,11 +7,6 @@ layout: base.njk
 <link rel="stylesheet" href="/css/the-chair.css">
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script src="/js/the-chair/carousel.js" defer></script>
-<style>
-	main {
-		max-width: min(34rem, 100%);
-	}
-</style>
 {% endhtml %}
 
 <nav>
@@ -28,35 +23,37 @@ layout: base.njk
 		<li><span class="chapter-link"><span>9&nbsp;</span>Image</span></li>
 	</ul>
 </nav>
-<div class="swiper-button-up-container">
-	<div class="swiper-button-up"></div>
-</div>
-<div class="swiper swiper-container-v swiper-v">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide">
-			<p>lorem ipsum</p>
-		</div>
-		{% for week in theChair %}
-		<div class="swiper-slide">
-			<div class="swiper swiper-container-h swiper-h">
-				<div class="swiper-button-prev-container">
-					<div class="swiper-button-prev"></div>
-				</div>
-				<div class="swiper-wrapper">
-					{% for file in week %}
-					<div class="swiper-slide">
-						<img src="{{file}}" alt="">
+<main>
+	<div class="swiper-button-up-container">
+		<div class="swiper-button-up"></div>
+	</div>
+	<div class="swiper swiper-container-v swiper-v">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<p>lorem ipsum</p>
+			</div>
+			{% for week in theChair %}
+			<div class="swiper-slide">
+				<div class="swiper swiper-container-h swiper-h">
+					<div class="swiper-button-prev-container">
+						<div class="swiper-button-prev"></div>
 					</div>
-					{% endfor %}
-				</div>
-				<div class="swiper-button-next-container">
-					<div class="swiper-button-next"></div>
+					<div class="swiper-wrapper">
+						{% for file in week %}
+						<div class="swiper-slide">
+							<img src="{{file}}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					<div class="swiper-button-next-container">
+						<div class="swiper-button-next"></div>
+					</div>
 				</div>
 			</div>
+			{% endfor %}
 		</div>
-		{% endfor %}
 	</div>
-</div>
-<div class="swiper-button-down-container">
-	<div class="swiper-button-down"></div>
-</div>
+	<div class="swiper-button-down-container">
+		<div class="swiper-button-down"></div>
+	</div>
+</main>
