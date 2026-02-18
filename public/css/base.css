@@ -7,7 +7,7 @@
 
 body {
 	padding: 1vw;
-	padding-top: 4vh;
+	padding-top: 20vh;
 	min-height: 100vh;
 	font-family: "ABC Oracle Variable", Arial, Helvetica, sans-serif;
 	font-size: .9rem;
@@ -125,6 +125,7 @@ a:hover {
 .swiper-slide img {
 	display: block;
 	width: 100%;
+	aspect-ratio: 1;
 	object-fit: contain;
 }
 

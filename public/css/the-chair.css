@@ -1,3 +1,40 @@
+.section-navigation {
+	display: block;
+	max-width: fit-content;
+	position: absolute;
+	left: 5%;
+	top: 2.5rem;
+	z-index: 15;
+}
+
+.section-navigation>li::before {
+	content: '○ ';
+	white-space: pre;
+	display: inline-block;
+}
+
+.section-navigation>li.current::before {
+	content: "● ";
+	display: inline-block;
+}
+
+.section-navigation>li.loading::before {
+	opacity: 0.1;
+}
+
+.section-navigation li {
+	list-style-type: none;
+}
+
+.chapter-link {
+	vertical-align: middle;
+	width: 100%
+}
+
+.section-navigation>li {
+	cursor: pointer;
+}
+
 .swiper {
 	width: 100%;
 	aspect-ratio: 1.1;
