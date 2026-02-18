@@ -5,6 +5,10 @@
 	src: url("/fonts/ABCOraclePlusVariableEdu-Regular.woff2") format("woff2");
 }
 
+:root {
+	--text-subtle: #606060;
+}
+
 body {
 	padding: 1vw;
 	padding-top: 20vh;
@@ -21,10 +25,7 @@ main {
 	position: relative;
 	max-width: 30ch;
 	padding: 1rem 0;
-	border: 1px solid #dadada;
 	height: min-content;
-	margin-left: auto;
-	margin-right: auto;
 
 	& h1,
 	h2,
@@ -34,13 +35,6 @@ main {
 		margin: 0 0.5rem;
 	}
 }
-
-hr {
-	border: none;
-	border-bottom: 1px solid #dadada;
-	margin: 1rem 0;
-}
-
 
 h1 {
 	font-size: inherit;
@@ -62,11 +56,6 @@ h2:after {
 }
 
 
-img {
-	width: 100px;
-	height: auto;
-}
-
 a {
 	text-decoration: none;
 	display: inline-block;
@@ -75,128 +64,42 @@ a {
 	height: min-content;
 }
 
-a:hover {
-	&::before {
-		content: '['
-	}
-
-	&::after {
-		content: ']'
-	}
+.project {
+	line-height: 1;
 }
 
-.preview {
-	display: none;
-	background: white;
-	outline: 1px solid #dadada;
-	padding: 0.25rem;
-	z-index: 99;
+.tags {
+	list-style-type: none;
+	color: var(--text-subtle);
+}
+
+.tags,
+.project-number {
+	margin-left: .75rem;
+}
+
+.thumbnail {
+	width: 100%;
+	background-color: black;
+	aspect-ratio: 5/6;
+	padding: 5%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: .25rem 0;
 }
 
 .link {
 	text-decoration: underline;
 }
 
-.desc {
-	text-decoration: none;
-	color: black;
-	opacity: .6;
-}
+.unselectable {
+	/* Prevent text selection */
+	user-select: none;
+	-webkit-user-select: none;
 
-#chair-thumbnail {
-	width: 20rem;
-	height: auto;
-	overflow: hidden;
-}
-
-
-.swiper {
-	width: 100%;
-	aspect-ratio: 1.1;
-}
-
-.swiper-slide {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	aspect-ratio: 1;
-}
-
-.swiper-slide img {
-	display: block;
-	width: 100%;
-	aspect-ratio: 1;
-	object-fit: contain;
-}
-
-
-.swiper-button-up,
-.swiper-button-down,
-.swiper-button-next,
-.swiper-button-prev {
-	margin: 0;
-	width: 100% !important;
-	aspect-ratio: 1;
-	position: static !important;
-	margin: 0 !important;
-	flex: 0 !important;
-
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 60%;
-}
-
-.swiper-button-up-container,
-.swiper-button-down-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.swiper-button-next-container,
-.swiper-button-prev-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	width: 4.5%;
-	height: 100%;
-	background-color: white;
-	z-index: 10;
-	top: 0;
-
-	/* i don't know why but this line is needed for the containers
-	 * to appear when using the nested swipers in safari */
-	-webkit-transform: translateZ(0);
-}
-
-.swiper-button-next-container {
-	right: 0;
-}
-
-.swiper-button-prev-container {
-	left: 0;
-}
-
-.swiper-button-up {
-	background-image: url('/assets/carousel-assets/arrow_up.svg');
-}
-
-.swiper-button-next {
-	background-image: url('/assets/carousel-assets/arrow_right.svg');
-}
-
-.swiper-button-prev {
-	background-image: url('/assets/carousel-assets/arrow_left.svg');
-}
-
-.swiper-button-down {
-	z-index: 10;
-	background-image: url('/assets/carousel-assets/arrow_down.svg');
-}
-
-.swiper-button-up.swiper-button-disabled,
-.swiper-button-down.swiper-button-disabled {
-	opacity: 0;
-	transition: opacity 0.5s;
+	/* Prevent pointer interactions */
+	pointer-events: none;
 }
