@@ -1,9 +1,9 @@
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { RenderPlugin } from "@11ty/eleventy";
-import { VentoPlugin } from 'eleventy-plugin-vento';
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import { VentoPlugin } from "eleventy-plugin-vento";
 import { buildAllCss } from "./src/_config/build-css.js";
 
-export default async function (eleventyConfig) {
+export default async function(eleventyConfig) {
 	eleventyConfig.on("eleventy.before", async () => {
 		await buildAllCss();
 	});
@@ -16,7 +16,7 @@ export default async function (eleventyConfig) {
 	});
 
 	// enable smart quotes
-	eleventyConfig.amendLibrary("md", function (md) {
+	eleventyConfig.amendLibrary("md", function(md) {
 		md.set({
 			typographer: true,
 		});
@@ -29,7 +29,7 @@ export default async function (eleventyConfig) {
 	// plugins
 	// eleventyConfig.addPlugin(eleventyImageTransformPlugin);
 	eleventyConfig.addPlugin(RenderPlugin);
-	eleventyConfig.addPlugin(VentoPlugin)
+	eleventyConfig.addPlugin(VentoPlugin);
 }
 
 export const config = {
@@ -38,6 +38,6 @@ export const config = {
 	dir: {
 		input: "src/content",
 		includes: "../_includes",
-		output: "../../dist",
+		output: "dist",
 	},
 };
