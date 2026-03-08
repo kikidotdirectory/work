@@ -14,7 +14,6 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"./public/": "/",
 	});
-	eleventyConfig.addPassthroughCopy('src/**/*.css')
 
 	// enable smart quotes
 	eleventyConfig.amendLibrary("md", function (md) {
@@ -24,7 +23,7 @@ export default async function (eleventyConfig) {
 	});
 
 	// configure eleventy bundles
-	eleventyConfig.addBundle("css");
+	eleventyConfig.addBundle("css", { hoist: true });
 	eleventyConfig.addBundle("html");
 
 	// plugins
