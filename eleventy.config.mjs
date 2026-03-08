@@ -36,8 +36,8 @@ export const config = {
 	markdownTemplateEngine: "njk",
 	htmlTemplateEngine: "njk",
 	dir: {
-		input: "src",
-		includes: "_includes",
-		output: "dist",
+		input: "src/content",
+		includes: "../_includes",
+		output: "../../dist",
 	},
 };
