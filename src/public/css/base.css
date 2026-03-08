@@ -6,7 +6,7 @@
 }
 
 :root {
-	--text-subtle: #606060;
+	--text-color-subtle: #606060;
 }
 
 body {
@@ -18,22 +18,15 @@ body {
 	font-variation-settings:
 		"TRIP" 0.80;
 
+	line-height: 1.2;
 	/* filter: url("../assets/distort.svg#distort"); */
 }
 
 main {
 	position: relative;
-	max-width: 30ch;
+	max-width: 35ch;
 	padding: 1rem 0;
 	height: min-content;
-
-	& h1,
-	h2,
-	h3,
-	p,
-	>a {
-		margin: 0 0.5rem;
-	}
 }
 
 h1 {
@@ -55,22 +48,51 @@ h2:after {
 	overflow: hidden;
 }
 
-
 a {
 	text-decoration: none;
-	display: inline-block;
 	line-height: 1;
-	width: 100%;
 	height: min-content;
 }
 
+p {
+	margin-bottom: .75rlh;
+}
+
+/* sections */
+/* intro */
+
+.pondering {
+	color: var(--text-color-subtle);
+	margin-bottom: 1rlh;
+	line-height: 1.1;
+	font-style: italic;
+}
+
+#intro {
+	text-indent: .75rem;
+}
+
+.more,
+.pronouns {
+	color: var(--text-color-subtle)
+}
+
+.randomize {
+	background-color: #e8e8e8;
+}
+
+.looking-for::before {
+	content: "↳";
+}
+
+/* projects */
 .project {
 	line-height: 1;
 }
 
 .tags {
 	list-style-type: none;
-	color: var(--text-subtle);
+	color: var(--text-color-subtle);
 }
 
 .tags,
@@ -93,6 +115,13 @@ a {
 
 .link {
 	text-decoration: underline;
+}
+
+footer {
+	color: var(--text-color-subtle);
+	font-size: .75rem;
+	font-variation-settings:
+		"TRIP" 0;
 }
 
 .unselectable {

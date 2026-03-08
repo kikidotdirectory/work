@@ -1,0 +1,9 @@
+/*
+WRAPPER COMPOSITION
+A common wrapper/container
+*/
+.wrapper {
+	max-width: 50ch;
+	padding: var(--space-s-l) var(--gutter);
+	position: relative;
+}

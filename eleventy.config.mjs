@@ -1,33 +1,44 @@
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import { RenderPlugin } from "@11ty/eleventy";
+import { VentoPlugin } from 'eleventy-plugin-vento';
+import { buildAllCss } from "./src/_config/build-css.js";
 
 export default async function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({
-    "./public/": "/",
-  });
+	eleventyConfig.on("eleventy.before", async () => {
+		await buildAllCss();
+	});
 
-  // enable smart quotes
-  eleventyConfig.amendLibrary("md", function (md) {
-    md.set({
-      typographer: true,
-    });
-  });
+	// custom watch targets
+	eleventyConfig.addWatchTarget("./src/css/**/*.css");
 
-  // configure eleventy bundles
-  eleventyConfig.addBundle("css");
-  eleventyConfig.addBundle("html");
+	eleventyConfig.addPassthroughCopy({
+		"./public/": "/",
+	});
+	eleventyConfig.addPassthroughCopy('src/**/*.css')
 
-  // plugins
-  // eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+	// enable smart quotes
+	eleventyConfig.amendLibrary("md", function (md) {
+		md.set({
+			typographer: true,
+		});
+	});
+
+	// configure eleventy bundles
+	eleventyConfig.addBundle("css");
+	eleventyConfig.addBundle("html");
+
+	// plugins
+	// eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+	eleventyConfig.addPlugin(RenderPlugin);
+	eleventyConfig.addPlugin(VentoPlugin)
 }
 
 export const config = {
-  markdownTemplateEngine: "njk",
-  htmlTemplateEngine: "njk",
-  dir: {
-    input: "content",
-    includes: "../_includes",
-    layouts: "../_includes/layouts",
-    data: "../_data",
-    output: "_site",
-  },
+	markdownTemplateEngine: "njk",
+	htmlTemplateEngine: "njk",
+	dir: {
+		input: "src",
+		includes: "_includes",
+		output: "dist",
+	},
 };
