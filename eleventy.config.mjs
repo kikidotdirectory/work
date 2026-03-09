@@ -33,9 +33,11 @@ export default async function(eleventyConfig) {
 
 export const config = {
 	markdownTemplateEngine: "vto",
+
 	dir: {
 		input: "src/pages",
 		includes: "../_includes",
+		data: "../_data",
 		output: "dist",
 	},
 };
