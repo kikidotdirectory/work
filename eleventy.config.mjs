@@ -32,8 +32,7 @@ export default async function(eleventyConfig) {
 }
 
 export const config = {
-	markdownTemplateEngine: "njk",
-	htmlTemplateEngine: "njk",
+	markdownTemplateEngine: "vto",
 	dir: {
 		input: "src/pages",
 		includes: "../_includes",
