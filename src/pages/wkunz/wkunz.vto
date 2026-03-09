@@ -1,0 +1,20 @@
+---
+title: "Architectural Typography"
+permalink: "{{ it.title |> slugify }}/"
+---
+{{ set front = wkunzImages[0] }}
+{{ set middle = wkunzImages.slice(1, wkunzImages.length - 1) }}
+{{ set back = wkunzImages[wkunzImages.length - 1] }}
+
+{{ layout "layouts/base.vto" }}
+	<main>
+		<div class="spread">
+			<p>
+
+			</p>
+		</div>
+		{{ for spread of middle }}
+			<img src="{{ spread }}" alt="">
+		{{ /for }}
+	</main>
+{{ /layout }}
