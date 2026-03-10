@@ -3,7 +3,7 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { VentoPlugin } from "eleventy-plugin-vento";
 import { buildAllCss } from "./src/_config/build-css.js";
 
-import filters from './src/_config/filters.js'
+import filters from "./src/_config/filters.js";
 
 export default async function(eleventyConfig) {
 	eleventyConfig.on("eleventy.before", async () => {
@@ -33,7 +33,7 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(VentoPlugin);
 
 	// add filters
-	eleventyConfig.addFilter('renderMarkdown', filters.renderMarkdown)
+	eleventyConfig.addFilter("renderMarkdown", filters.renderMarkdown);
 }
 
 export const config = {
