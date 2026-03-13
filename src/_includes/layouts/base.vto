@@ -4,8 +4,11 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title }}</title>
+		{{ if css }}
+			<style> {{ css }} </style>
+		{{ /if }}
 		{{ if head }}
-			<style> {{ head }} </style>
+			{{ head }}
 		{{ /if }}
 		{{ include "partials/head-stylesheet.vto"}}
 	</head>
