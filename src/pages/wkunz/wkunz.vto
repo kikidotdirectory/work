@@ -3,17 +3,19 @@ title: "Architectural Typography"
 permalink: "{{ it.title |> slugify }}/"
 description: "**Architectural Typography** is an editorial tribute to the work of Willi Kunz. The text and title are that of [a short essay by Ellen Lupton](http://willikunz.com/reviews/aiga-journal) published in the AIGA Journal."
 ---
+{{ set head }}
+	{{ include "./wkunz.css" }}
+{{ /set }}
+
 {{ set front = wkunzImages[0] }}
 {{ set middle = wkunzImages.slice(1, wkunzImages.length - 1) }}
 {{ set back = wkunzImages[wkunzImages.length - 1] }}
 
 {{ layout "layouts/base.vto" }}
-	<main>
-		<div class="spread">
-			<p>{{ it.description |> renderMarkdown }}</p>
+	<main class="spreads-wrapper">
+		<div class="page-left"></div>
+		<div class="page-right">
+			<img src="{{ front }}" alt="">
 		</div>
-		{{ for spread of middle }}
-			<img src="{{ spread }}" alt="">
-		{{ /for }}
 	</main>
 {{ /layout }}

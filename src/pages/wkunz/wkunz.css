@@ -1,0 +1,17 @@
+body {
+	height: 100vh;
+	overflow: hidden;
+}
+
+main {
+	margin: 0 2px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	aspect-ratio: 75/53;
+
+}
+
+img {
+	height: 100%;
+	width: auto;
+}
