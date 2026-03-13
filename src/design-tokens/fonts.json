@@ -5,7 +5,7 @@
     {
       "name": "Base",
       "description": "System fonts for body copy and globally set text.",
-      "value": ["Arial", "serif"]
+      "value": ["Times New Roman", "serif"]
     }
   ]
 }
