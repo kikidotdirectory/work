@@ -3,17 +3,22 @@ const pageRight = document.querySelector(".page-right");
 
 let currentSpread = 0;
 
+const imageCache = spreads.map(src => {
+  const img = new Image();
+  img.src = src;
+  return img;
+});
+
 function renderPages() {
-	if (currentSpread === 0) {
-		pageLeft.innerHTML = "";
-		pageRight.innerHTML = spreads[currentSpread];
-	} else if (currentSpread === spreads.length - 1) {
-		pageLeft.innerHTML = spreads[currentSpread];
-		pageRight.innerHTML = "";
-	} else {
-		pageLeft.innerHTML = spreads[currentSpread];
-		pageRight.innerHTML = spreads[currentSpread];
-	}
+  pageLeft.innerHTML = "";
+  pageRight.innerHTML = "";
+
+  if (currentSpread > 0) {
+    pageLeft.appendChild(imageCache[currentSpread].cloneNode());
+  }
+  if (currentSpread < spreads.length - 1) {
+    pageRight.appendChild(imageCache[currentSpread].cloneNode());
+  }
 }
 
 function nextPage() {
