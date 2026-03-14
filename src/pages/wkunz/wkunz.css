@@ -1,9 +1,12 @@
 body {
 	height: 100vh;
 	overflow: hidden;
+	display: flex;
+	justify-content: center;
 }
 
 main {
+	height: inherit;
 	margin: 0 2px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
