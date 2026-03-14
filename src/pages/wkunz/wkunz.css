@@ -14,4 +14,13 @@ main {
 img {
 	height: 100%;
 	width: auto;
+	object-fit: cover;
+}
+
+.page-left img {
+	object-position: left;
+}
+
+.page-right img {
+	object-position: right;
 }

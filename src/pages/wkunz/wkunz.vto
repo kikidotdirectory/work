@@ -6,6 +6,9 @@ description: "**Architectural Typography** is an editorial tribute to the work o
 {{ set inlinecss }}
 	{{ include "./wkunz.css" }}
 {{ /set }}
+{{ set head }}
+	<script src="/js/wkunz.js" defer></script>
+{{ /set }}
 
 {{ set front = wkunzImages[0] }}
 {{ set middle = wkunzImages.slice(1, wkunzImages.length - 1) }}
@@ -18,4 +21,11 @@ description: "**Architectural Typography** is an editorial tribute to the work o
 			<img src="{{ front }}" alt="">
 		</div>
 	</main>
+	<script>
+	let spreads = [
+	{{ for image of wkunzImages }}
+	`<img src="{{ image }}">`,
+	{{/for}}
+	]
+	</script>
 {{ /layout }}
