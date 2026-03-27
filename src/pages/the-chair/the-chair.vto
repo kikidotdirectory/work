@@ -1,0 +1,15 @@
+---
+title: /the-chair/
+layout: layouts/base.vto
+---
+<main>
+	<ul class="chair-weeks">
+		{{ for week of theChair }}
+		<div class="week-container">
+			{{ for file of week }}
+			<img src="{{ file }}" alt="">
+			{{ /for }}
+		</div>
+		{{ /for }}
+	</ul>
+</main>

@@ -3,7 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ASSETS_DIR = path.join(__dirname, "..", "pages", "public", "assets", "the-chair");
+const ASSETS_DIR = path.join(__dirname, "..", "assets", "images", "the-chair");
 
 const imageExts = new Set([
 	".jpg",
@@ -31,7 +31,7 @@ export default async function() {
 		const imagePaths = dirContents
 			.filter((entry) => entry.isFile())
 			.filter((entry) => imageExts.has(path.extname(entry.name).toLowerCase()))
-			.map((entry) => `/assets/the-chair/${dir.name}/${entry.name}`);
+			.map((entry) => `/images/the-chair/${dir.name}/${entry.name}`);
 
 		filePaths.push(imagePaths);
 	}
