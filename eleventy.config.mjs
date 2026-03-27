@@ -30,7 +30,9 @@ export default async function(eleventyConfig) {
 	// plugins
 	// eleventyConfig.addPlugin(eleventyImageTransformPlugin);
 	eleventyConfig.addPlugin(RenderPlugin);
-	eleventyConfig.addPlugin(VentoPlugin);
+	eleventyConfig.addPlugin(VentoPlugin, {
+		autotrim: true,
+	});
 
 	// add filters
 	eleventyConfig.addFilter("renderMarkdown", filters.renderMarkdown);
