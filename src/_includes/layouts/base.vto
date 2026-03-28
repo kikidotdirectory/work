@@ -4,13 +4,16 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title }}</title>
+		{{ set head }}{{ getBundle "html", "head" }}{{ /set }}
+		{{ if head }}{{ head }}{{ /if }}
+		{{ set inlinecss }}{{ getBundle "css", "inline" }}{{/set}}
 		{{ if inlinecss }}
-			<style> {{ inlinecss }} </style>
+		<!-- inline styles only relevant to this page -->
+		<style>
+			{{ inlinecss }}
+		</style>
 		{{ /if }}
-		{{ if head }}
-			{{ head }}
-		{{ /if }}
-		{{ include "partials/head-stylesheet.vto"}}
+		{{ include "partials/head-stylesheet.vto" -}}
 	</head>
 	<body>
 		{{ content }}
