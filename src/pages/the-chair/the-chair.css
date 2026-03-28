@@ -1,3 +1,17 @@
+ul.chair-weeks {
+	width: 100%;
+	list-style-type: none;
+	padding: 0;
+}
 .weeks-container {
-
+	display: flex;
+	position: relative;
+	gap: 8px;
+	overflow: auto;
+}
+.weeks-container img {
+	max-height: 18rem;
+	width: auto;
+	flex-shrink: 0;
+	margin-bottom: 6px;
 }
