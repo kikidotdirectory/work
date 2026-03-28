@@ -9,8 +9,7 @@
 		{{ set inlinecss }}{{ getBundle "css", "inline" }}{{/set}}
 		{{ if inlinecss }}
 		<!-- inline styles only relevant to this page -->
-		<style>
-			{{ inlinecss }}
+		<style> {{ inlinecss }}
 		</style>
 		{{ /if }}
 		{{ include "partials/head-stylesheet.vto" -}}

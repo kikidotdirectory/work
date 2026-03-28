@@ -1,0 +1,22 @@
+---
+title: /the-chair/
+permalink: "{{ title | slugify }}/"
+layout: layouts/base.njk
+---
+{%- css "inline" -%}
+{%- include "./the-chair.css" -%}
+{%- endcss -%}
+
+<main>
+	<ul class="chair-weeks">
+		{%- for week in theChair %}
+		<li>
+			<div class="weeks-container">
+				{%- for file in week %}
+				<img src="{{ file }}" alt="">
+				{%- endfor %}
+			</div>
+		</li>
+		{%- endfor %}
+	</ul>
+</main>
