@@ -25,13 +25,14 @@ export default async function(eleventyConfig) {
 
 	// configure eleventy bundles
 	eleventyConfig.addBundle("css", { hoist: true });
-	eleventyConfig.addBundle("html");
+	eleventyConfig.addBundle("html", { hoist: true });
+	eleventyConfig.addBundle("js", { hoist: true });
 
 	// plugins
 	// eleventyConfig.addPlugin(eleventyImageTransformPlugin);
 	eleventyConfig.addPlugin(RenderPlugin);
 	eleventyConfig.addPlugin(VentoPlugin, {
-		autotrim: true,
+		autotrim: ["@vento", "@11ty", "tag", "content", "getBundle"],
 	});
 
 	// add filters
