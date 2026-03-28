@@ -4,14 +4,22 @@ ul.chair-weeks {
 	padding: 0;
 }
 .weeks-container {
+	--wc-img-size: 18rem;
+	--wc-padding: 16px;
+	--wc-gap: 12px;
+
 	display: flex;
 	position: relative;
-	gap: 8px;
+	gap: var(--wc-gap);
+	padding: var(--wc-padding);
 	overflow: auto;
+	height: var(--wc-img-size)
 }
+
 .weeks-container img {
-	max-height: 18rem;
+	height:100%;
+	object-fit: contain;
 	width: auto;
+	aspect-ratio: 1;
 	flex-shrink: 0;
-	margin-bottom: 6px;
 }
