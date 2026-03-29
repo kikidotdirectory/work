@@ -1,7 +1,27 @@
+main {
+	position: relative;
+	overflow: hidden;
+}
+p {
+	position: absolute;
+}
 ul.chair-weeks {
-	width: 100%;
+	min-width: 0;
 	list-style-type: none;
 	padding: 0;
+	overflow: visible;
+	display: flex;
+	flex-direction: column;
+}
+ul.chair-weeks li {
+	overflow-x: auto;
+
+	/* hide scrollbars  */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	& ::-webkit-scrollbar {
+		display: none;
+	}
 }
 .weeks-container {
 	--wc-img-size: 18rem;
@@ -9,15 +29,16 @@ ul.chair-weeks {
 	--wc-gap: 12px;
 
 	display: flex;
-	position: relative;
+	width: max-content;
 	gap: var(--wc-gap);
 	padding: var(--wc-padding);
-	overflow: auto;
-	height: var(--wc-img-size)
+	height: var(--wc-img-size);
+	margin-left: 40vw;
+	background-color: #f7f7f7;
 }
 
 .weeks-container img {
-	height:100%;
+	height: 100%;
 	object-fit: contain;
 	width: auto;
 	aspect-ratio: 1;
