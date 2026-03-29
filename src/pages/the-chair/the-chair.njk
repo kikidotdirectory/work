@@ -21,3 +21,25 @@ layout: layouts/base.njk
 		{%- endfor %}
 	</ul>
 </main>
+
+<script>
+	document.querySelectorAll('.chair-weeks li').forEach(el => {
+		let isDown = false;
+		let startX, startScrollLeft;
+
+		el.addEventListener('mousedown', e => {
+			isDown = true;
+			startX = e.pageX;
+			startScrollLeft = el.scrollLeft;
+			el.style.cursor = 'grabbing';
+		});
+		el.addEventListener('mouseleave', () => { isDown = false; el.style.cursor = ''; });
+		el.addEventListener('mouseup', () => { isDown = false; el.style.cursor = ''; });
+		el.addEventListener('dragstart', e => e.preventDefault());
+		el.addEventListener('mousemove', e => {
+			if (!isDown) return;
+			e.preventDefault();
+			el.scrollLeft = startScrollLeft - (e.pageX - startX);
+		});
+	});
+</script>

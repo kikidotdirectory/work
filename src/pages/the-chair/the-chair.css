@@ -15,6 +15,8 @@ ul.chair-weeks {
 }
 ul.chair-weeks li {
 	overflow-x: auto;
+	cursor: grab;
+	user-select: none;
 
 	/* hide scrollbars  */
 	-ms-overflow-style: none; /* IE and Edge */
@@ -38,6 +40,7 @@ ul.chair-weeks li {
 }
 
 .weeks-container img {
+	pointer-events: none;
 	height: 100%;
 	object-fit: contain;
 	width: auto;
