@@ -23,14 +23,14 @@ layout: layouts/base.njk
 </main>
 
 <script>
-	document.querySelectorAll('.chair-weeks li').forEach(el => {
+	document.querySelectorAll('.weeks-container').forEach(el => {
 		let isDown = false;
 		let startX, startScrollLeft;
 
 		el.addEventListener('mousedown', e => {
 			isDown = true;
 			startX = e.pageX;
-			startScrollLeft = el.scrollLeft;
+			startScrollLeft = el.parentElement.scrollLeft;
 			el.style.cursor = 'grabbing';
 		});
 		el.addEventListener('mouseleave', () => { isDown = false; el.style.cursor = ''; });
@@ -39,7 +39,7 @@ layout: layouts/base.njk
 		el.addEventListener('mousemove', e => {
 			if (!isDown) return;
 			e.preventDefault();
-			el.scrollLeft = startScrollLeft - (e.pageX - startX);
+			el.parentElement.scrollLeft = startScrollLeft - (e.pageX - startX);
 		});
 	});
 </script>
