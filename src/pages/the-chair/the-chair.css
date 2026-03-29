@@ -2,8 +2,12 @@ main {
 	position: relative;
 	overflow: hidden;
 }
-p {
-	position: absolute;
+.folder {
+	background-color: var(--background-color);
+	& p {
+		position: absolute;
+		max-width: 45ch;
+	}
 }
 ul.chair-weeks {
 	min-width: 0;

@@ -8,7 +8,9 @@ layout: layouts/base.njk
 {%- endcss -%}
 
 <main>
-	{% renderFile './src/pages/the-chair/the-chair.md' %}
+	<div class="folder">
+		{% renderFile './src/pages/the-chair/the-chair.md' %}
+	</div>
 	<ul class="chair-weeks">
 		{%- for week in theChair %}
 		<li>
