@@ -10,7 +10,8 @@
 			{{ inlinecss | safe }}
 		</style>
 		{%- endif %}
-		<link rel="stylesheet" href="/css/base.css">
+
+		{%- include "partials/head-stylesheet.njk" %}
 		{%- getBundle "html", "head" %}
 	</head>
 	<body>
