@@ -8,6 +8,7 @@ layout: layouts/base.njk
 {%- endcss -%}
 
 <main>
+	{% renderFile './src/pages/the-chair/the-chair.md' %}
 	<ul class="chair-weeks">
 		{%- for week in theChair %}
 		<li>
