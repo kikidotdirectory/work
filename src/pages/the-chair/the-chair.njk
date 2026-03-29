@@ -12,15 +12,86 @@ layout: layouts/base.njk
 		{% renderFile './src/pages/the-chair/the-chair.md' %}
 	</div>
 	<ul class="chair-weeks">
-		{%- for week in theChair %}
 		<li>
 			<div class="weeks-container">
-				{%- for file in week %}
-				<img src="{{ file }}" alt="">
-				{%- endfor %}
+				<img src="/images/the-chair/w1/1.png" alt="">
+				<img src="/images/the-chair/w1/2.png" alt="">
+				<img src="/images/the-chair/w1/3.png" alt="">
+				<img src="/images/the-chair/w1/4.png" alt="">
+				<img src="/images/the-chair/w1/5.png" alt="">
 			</div>
 		</li>
-		{%- endfor %}
+		<li>
+			<div class="weeks-container">
+				<img src="/images/the-chair/w2/1.png" alt="">
+				<img src="/images/the-chair/w2/2.png" alt="">
+				<img src="/images/the-chair/w2/3.png" alt="">
+				<img src="/images/the-chair/w2/4.png" alt="">
+				<img src="/images/the-chair/w2/5.png" alt="">
+			</div>
+		</li>
+		<li>
+			<div class="weeks-container">
+				<img src="/images/the-chair/w3/1.png" alt="">
+				<img src="/images/the-chair/w3/2.png" alt="">
+				<img src="/images/the-chair/w3/3.png" alt="">
+				<img src="/images/the-chair/w3/4.png" alt="">
+				<img src="/images/the-chair/w3/5.png" alt="">
+			</div>
+		</li>
+		<li>
+			<div class="weeks-container">
+				<img src="/images/the-chair/w4/1.png" alt="">
+				<img src="/images/the-chair/w4/2.png" alt="">
+				<img src="/images/the-chair/w4/3.png" alt="">
+				<img src="/images/the-chair/w4/4.png" alt="">
+				<img src="/images/the-chair/w4/5.png" alt="">
+			</div>
+		</li>
+		<li>
+			<div class="weeks-container">
+				<img src="/images/the-chair/w5/1.png" alt="">
+				<img src="/images/the-chair/w5/2.png" alt="">
+				<img src="/images/the-chair/w5/3.png" alt="">
+				<img src="/images/the-chair/w5/4.png" alt="">
+				<img src="/images/the-chair/w5/5.png" alt="">
+			</div>
+		</li>
+		<li>
+			<div class="weeks-container">
+				<img src="/images/the-chair/w6/1.png" alt="">
+				<img src="/images/the-chair/w6/2.png" alt="">
+				<img src="/images/the-chair/w6/3.png" alt="">
+				<img src="/images/the-chair/w6/4.png" alt="">
+				<img src="/images/the-chair/w6/5.png" alt="">
+			</div>
+		</li>
+		<li>
+			<div class="weeks-container">
+				<img src="/images/the-chair/w7/1.png" alt="">
+				<img src="/images/the-chair/w7/2.png" alt="">
+				<img src="/images/the-chair/w7/3.png" alt="">
+				<img src="/images/the-chair/w7/4.png" alt="">
+				<img src="/images/the-chair/w7/5.png" alt="">
+			</div>
+		</li>
+		<li>
+			<div class="weeks-container">
+				<img src="/images/the-chair/w8/1.png" alt="">
+				<img src="/images/the-chair/w8/2.png" alt="">
+				<img src="/images/the-chair/w8/3.png" alt="">
+				<img src="/images/the-chair/w8/4.png" alt="">
+				<img src="/images/the-chair/w8/5.png" alt="">
+			</div>
+		</li>
+		<li>
+			<div class="weeks-container">
+				<img src="/images/the-chair/w9/1.png" alt="">
+				<img src="/images/the-chair/w9/2.png" alt="">
+				<img src="/images/the-chair/w9/3.png" alt="">
+				<img src="/images/the-chair/w9/4.png" alt="">
+			</div>
+		</li>
 	</ul>
 </main>
 
@@ -28,20 +99,20 @@ layout: layouts/base.njk
 	document.querySelectorAll('.weeks-container').forEach(el => {
 		let isDown = false;
 		let startX, startScrollLeft;
-
+		
 		el.addEventListener('mousedown', e => {
 			isDown = true;
 			startX = e.pageX;
 			startScrollLeft = el.parentElement.scrollLeft;
 			el.style.cursor = 'grabbing';
-		});
-		el.addEventListener('mouseleave', () => { isDown = false; el.style.cursor = ''; });
-		el.addEventListener('mouseup', () => { isDown = false; el.style.cursor = ''; });
-		el.addEventListener('dragstart', e => e.preventDefault());
-		el.addEventListener('mousemove', e => {
-			if (!isDown) return;
-			e.preventDefault();
-			el.parentElement.scrollLeft = startScrollLeft - (e.pageX - startX);
-		});
-	});
+			});
+			el.addEventListener('mouseleave', () => { isDown = false; el.style.cursor = ''; });
+			el.addEventListener('mouseup', () => { isDown = false; el.style.cursor = ''; });
+			el.addEventListener('dragstart', e => e.preventDefault());
+			el.addEventListener('mousemove', e => {
+				if (!isDown) return;
+				e.preventDefault();
+				el.parentElement.scrollLeft = startScrollLeft - (e.pageX - startX);
+				});
+				});
 </script>
