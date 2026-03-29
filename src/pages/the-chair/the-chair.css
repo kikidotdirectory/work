@@ -25,7 +25,7 @@ ul.chair-weeks li {
 	}
 }
 .weeks-container {
-	--wc-img-size: 18rem;
+	--wc-img-size: 20rem;
 	--wc-padding: 16px;
 	--wc-gap: 12px;
 
@@ -33,7 +33,7 @@ ul.chair-weeks li {
 	width: max-content;
 	gap: var(--wc-gap);
 	padding: var(--wc-padding);
-	height: var(--wc-img-size);
+	height: calc(var(--wc-img-size) + 2 * var(--wc-padding));
 	margin-left: 40vw;
 	background-color: #f7f7f7;
 	cursor: grab;
