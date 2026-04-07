@@ -1,11 +1,12 @@
 main {
 	position: relative;
 	overflow: hidden;
+	& > * {
+		margin-bottom: 1rem;
+	}
 }
 .folder {
-	background-color: var(--background-color);
 	& p {
-		position: absolute;
 		max-width: 45ch;
 	}
 }
