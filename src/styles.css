@@ -1,16 +1,13 @@
 main {
 	position: relative;
 	overflow: hidden;
+	max-width: 60ch;
 	& > * {
 		margin-bottom: 1rem;
 	}
 }
 .weeks-container {
-	--wc-img-size: 20rem;
-	--wc-padding: 16px;
-
 	position: relative;
-	width: var(--wc-img-size);
 }
 
 .weeks-container img {
@@ -49,11 +46,14 @@ main {
 	cursor: e-resize;
 }
 
+.week-figure {
+	margin: 0;
+}
+
 .weeks-breadcrumbs {
 	display: flex;
 	gap: 6px;
 	margin-top: 6px;
-	margin-bottom: 1rem;
 }
 
 .weeks-breadcrumbs button {

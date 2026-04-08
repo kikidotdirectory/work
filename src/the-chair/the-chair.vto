@@ -8,104 +8,34 @@ layout: layouts/page.vto
 		nine-weeks-long exercise. starting with only 10pt Helvetica, each week
 		introduced a new primitive to explore the limits *of*.
 	</div>
-	<div class="weeks-container">
-		<img src="/images/the-chair/w1/1.png" alt="">
-		<img src="/images/the-chair/w1/2.png" alt="">
-		<img src="/images/the-chair/w1/3.png" alt="">
-		<img src="/images/the-chair/w1/4.png" alt="">
-		<img src="/images/the-chair/w1/5.png" alt="">
-	</div>
-	<div class="weeks-container">
-		<img src="/images/the-chair/w2/1.png" alt="">
-		<img src="/images/the-chair/w2/2.png" alt="">
-		<img src="/images/the-chair/w2/3.png" alt="">
-		<img src="/images/the-chair/w2/4.png" alt="">
-		<img src="/images/the-chair/w2/5.png" alt="">
-	</div>
-	<div class="weeks-container">
-		<img src="/images/the-chair/w3/1.png" alt="">
-		<img src="/images/the-chair/w3/2.png" alt="">
-		<img src="/images/the-chair/w3/3.png" alt="">
-		<img src="/images/the-chair/w3/4.png" alt="">
-		<img src="/images/the-chair/w3/5.png" alt="">
-	</div>
-	<div class="weeks-container">
-		<img src="/images/the-chair/w4/1.png" alt="">
-		<img src="/images/the-chair/w4/2.png" alt="">
-		<img src="/images/the-chair/w4/3.png" alt="">
-		<img src="/images/the-chair/w4/4.png" alt="">
-		<img src="/images/the-chair/w4/5.png" alt="">
-	</div>
-	<div class="weeks-container">
-		<img src="/images/the-chair/w5/1.png" alt="">
-		<img src="/images/the-chair/w5/2.png" alt="">
-		<img src="/images/the-chair/w5/3.png" alt="">
-		<img src="/images/the-chair/w5/4.png" alt="">
-		<img src="/images/the-chair/w5/5.png" alt="">
-	</div>
-	<div class="weeks-container">
-		<img src="/images/the-chair/w6/1.png" alt="">
-		<img src="/images/the-chair/w6/2.png" alt="">
-		<img src="/images/the-chair/w6/3.png" alt="">
-		<img src="/images/the-chair/w6/4.png" alt="">
-		<img src="/images/the-chair/w6/5.png" alt="">
-	</div>
-	<div class="weeks-container">
-		<img src="/images/the-chair/w7/1.png" alt="">
-		<img src="/images/the-chair/w7/2.png" alt="">
-		<img src="/images/the-chair/w7/3.png" alt="">
-		<img src="/images/the-chair/w7/4.png" alt="">
-		<img src="/images/the-chair/w7/5.png" alt="">
-	</div>
-	<div class="weeks-container">
-		<img src="/images/the-chair/w8/1.png" alt="">
-		<img src="/images/the-chair/w8/2.png" alt="">
-		<img src="/images/the-chair/w8/3.png" alt="">
-		<img src="/images/the-chair/w8/4.png" alt="">
-		<img src="/images/the-chair/w8/5.png" alt="">
-	</div>
-	<div class="weeks-container">
-		<img src="/images/the-chair/w9/1.png" alt="">
-		<img src="/images/the-chair/w9/2.png" alt="">
-		<img src="/images/the-chair/w9/3.png" alt="">
-		<img src="/images/the-chair/w9/4.png" alt="">
-	</div>
+	{{ comp.weekcarousel({ week: 1, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 2, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 3, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 4, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 5, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 6, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 7, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 8, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 9, images: [1,2,3,4] }) }}
 </main>
 
 <script>
 document.querySelectorAll(".weeks-container").forEach(el => {
 	const imgs = Array.from(el.querySelectorAll("img"));
+	const figure = el.closest("figure");
+	const dots = Array.from(figure.querySelectorAll(".weeks-breadcrumbs button"));
 	let current = 0;
 
 	function show(i) {
 		imgs[current].classList.remove("active");
+		dots[current].classList.remove("active");
 		current = (i + imgs.length) % imgs.length;
 		imgs[current].classList.add("active");
-		breadcrumbs.querySelectorAll("button").forEach((b, j) => {
-			b.classList.toggle("active", j === current);
-		});
+		dots[current].classList.add("active");
 	}
 
-	imgs[0].classList.add("active");
-
-	const prev = document.createElement("button");
-	prev.className = "prev-slide";
-	prev.addEventListener("click", () => show(current - 1));
-
-	const next = document.createElement("button");
-	next.className = "next-slide";
-	next.addEventListener("click", () => show(current + 1));
-
-	el.prepend(prev, next);
-
-	const breadcrumbs = document.createElement("div");
-	breadcrumbs.className = "weeks-breadcrumbs";
-	imgs.forEach((_, i) => {
-		const dot = document.createElement("button");
-		dot.classList.toggle("active", i === 0);
-		dot.addEventListener("click", () => show(i));
-		breadcrumbs.append(dot);
-	});
-	el.after(breadcrumbs);
+	el.querySelector(".prev-slide").addEventListener("click", () => show(current - 1));
+	el.querySelector(".next-slide").addEventListener("click", () => show(current + 1));
+	dots.forEach((dot, i) => dot.addEventListener("click", () => show(i)));
 });
 </script>

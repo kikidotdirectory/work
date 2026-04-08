@@ -1,0 +1,14 @@
+<figure class="week-figure">
+	<div class="weeks-container">
+		<button class="prev-slide"></button>
+		<button class="next-slide"></button>
+		{{ for image of images }}
+			<img src="/images/the-chair/w{{ week }}/{{ image }}.png" alt="" class="{{ image === images[0] ? 'active' : '' }}">
+		{{ /for }}
+	</div>
+	<div class="weeks-breadcrumbs">
+		{{ for image of images }}
+			<button class="{{ image === images[0] ? 'active' : '' }}"></button>
+		{{ /for }}
+	</div>
+</figure>
