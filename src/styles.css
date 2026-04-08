@@ -5,51 +5,68 @@ main {
 		margin-bottom: 1rem;
 	}
 }
-.folder {
-	& p {
-		max-width: 45ch;
-	}
-}
-ul.chair-weeks {
-	min-width: 0;
-	list-style-type: none;
-	padding: 0;
-	overflow: visible;
-	display: flex;
-	flex-direction: column;
-}
-ul.chair-weeks li {
-	overflow-x: auto;
-	user-select: none;
-
-	/* hide scrollbars  */
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-	& ::-webkit-scrollbar {
-		display: none;
-	}
-}
 .weeks-container {
 	--wc-img-size: 20rem;
 	--wc-padding: 16px;
-	--wc-gap: 12px;
 
-	display: flex;
-	width: max-content;
-	gap: var(--wc-gap);
-	padding: var(--wc-padding);
-	height: calc(var(--wc-img-size) + 2 * var(--wc-padding));
-	margin-left: 40vw;
-	background-color: #f7f7f7;
-	cursor: grab;
+	position: relative;
+	width: var(--wc-img-size);
 }
 
 .weeks-container img {
+	display: none;
 	pointer-events: none;
-	height: 100%;
 	object-fit: contain;
-	width: auto;
+	width: 100%;
 	aspect-ratio: 1;
-	flex-shrink: 0;
+}
+
+.weeks-container img.active {
+	display: block;
+}
+
+.weeks-container .prev-slide,
+.weeks-container .next-slide {
+	position: absolute;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.weeks-container .prev-slide {
+	left: 0;
+	cursor: w-resize;
+}
+
+.weeks-container .next-slide {
+	right: 0;
+	cursor: e-resize;
+}
+
+.weeks-breadcrumbs {
+	display: flex;
+	gap: 6px;
+	margin-top: 6px;
+	margin-bottom: 1rem;
+}
+
+.weeks-breadcrumbs button {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	border: 1px solid currentColor;
+	background: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.weeks-breadcrumbs button.active {
+	background: currentColor;
 }
 
