@@ -1,0 +1,77 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+main {
+	position: relative;
+	overflow: hidden;
+	max-width: 60ch;
+	& > * {
+		margin-bottom: 1rem;
+	}
+}
+.weeks-container {
+	position: relative;
+}
+
+.weeks-container img {
+	display: none;
+	pointer-events: none;
+	object-fit: contain;
+	width: 100%;
+	aspect-ratio: 1;
+}
+
+.weeks-container img.active {
+	display: block;
+}
+
+.weeks-container .prev-slide,
+.weeks-container .next-slide {
+	position: absolute;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.weeks-container .prev-slide {
+	left: 0;
+	cursor: w-resize;
+}
+
+.weeks-container .next-slide {
+	right: 0;
+	cursor: e-resize;
+}
+
+.week-figure {
+	margin: 0;
+}
+
+.weeks-breadcrumbs {
+	display: flex;
+	gap: 6px;
+	margin-top: 6px;
+}
+
+.weeks-breadcrumbs button {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	border: 1px solid currentColor;
+	background: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.weeks-breadcrumbs button.active {
+	background: currentColor;
+}
+

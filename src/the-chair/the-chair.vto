@@ -1,0 +1,41 @@
+---
+title: /the-chair/
+layout: layouts/page.vto
+---
+<main>
+	<div class="folder">
+		/the-chair/ is a series of typographic layout explorations from a
+		nine-weeks-long exercise. starting with only 10pt Helvetica, each week
+		introduced a new primitive to explore the limits *of*.
+	</div>
+	{{ comp.weekcarousel({ week: 1, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 2, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 3, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 4, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 5, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 6, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 7, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 8, images: [1,2,3,4,5] }) }}
+	{{ comp.weekcarousel({ week: 9, images: [1,2,3,4] }) }}
+</main>
+
+<script>
+document.querySelectorAll(".weeks-container").forEach(el => {
+	const imgs = Array.from(el.querySelectorAll("img"));
+	const figure = el.closest("figure");
+	const dots = Array.from(figure.querySelectorAll(".weeks-breadcrumbs button"));
+	let current = 0;
+
+	function show(i) {
+		imgs[current].classList.remove("active");
+		dots[current].classList.remove("active");
+		current = (i + imgs.length) % imgs.length;
+		imgs[current].classList.add("active");
+		dots[current].classList.add("active");
+	}
+
+	el.querySelector(".prev-slide").addEventListener("click", () => show(current - 1));
+	el.querySelector(".next-slide").addEventListener("click", () => show(current + 1));
+	dots.forEach((dot, i) => dot.addEventListener("click", () => show(i)));
+});
+</script>

@@ -1,6 +1,5 @@
-node_modules/
+dist
+_cache
+.env
 .DS_Store
-
-# ignore generated files
-dist/
-src/_includes/css
+deno.json
