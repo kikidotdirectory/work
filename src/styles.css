@@ -1,0 +1,55 @@
+main {
+	position: relative;
+	overflow: hidden;
+	& > * {
+		margin-bottom: 1rem;
+	}
+}
+.folder {
+	& p {
+		max-width: 45ch;
+	}
+}
+ul.chair-weeks {
+	min-width: 0;
+	list-style-type: none;
+	padding: 0;
+	overflow: visible;
+	display: flex;
+	flex-direction: column;
+}
+ul.chair-weeks li {
+	overflow-x: auto;
+	user-select: none;
+
+	/* hide scrollbars  */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	& ::-webkit-scrollbar {
+		display: none;
+	}
+}
+.weeks-container {
+	--wc-img-size: 20rem;
+	--wc-padding: 16px;
+	--wc-gap: 12px;
+
+	display: flex;
+	width: max-content;
+	gap: var(--wc-gap);
+	padding: var(--wc-padding);
+	height: calc(var(--wc-img-size) + 2 * var(--wc-padding));
+	margin-left: 40vw;
+	background-color: #f7f7f7;
+	cursor: grab;
+}
+
+.weeks-container img {
+	pointer-events: none;
+	height: 100%;
+	object-fit: contain;
+	width: auto;
+	aspect-ratio: 1;
+	flex-shrink: 0;
+}
+
